@@ -12,7 +12,7 @@ script = ExtResource( 2 )
 speed = Vector2( 300, 200 )
 gravity = 3000.0
 
-[node name="Stationary" type="Sprite" parent="."]
+[node name="Player" type="Sprite" parent="."]
 position = Vector2( 0, -38 )
 texture = ExtResource( 1 )
 
