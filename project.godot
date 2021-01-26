@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Seeker"
-run/main_scene="res://src/Levels/Leveltest.tscn"
+run/main_scene="res://src/Levels/LevelOne.tscn"
 config/icon="res://icon.png"
 
 [display]
