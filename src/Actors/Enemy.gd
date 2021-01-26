@@ -1,5 +1,6 @@
 extends "res://src/Actors/Actor.gd"
 
+
 func _ready() -> void:
 	set_physics_process(false) #deactivate enemy at start
 	_velocity.x = -speed.x #go backwards 

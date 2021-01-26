@@ -1,7 +1,6 @@
 extends Actor
 
 export var topkill_impulse: = 1000.0
-
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_topkill_velocity(_velocity, topkill_impulse)
 
@@ -28,6 +27,8 @@ func calculate_move_velocity(
 		speed: Vector2,
 		is_jump_interrupted: bool
 	) -> Vector2: 
+	speed.x=300
+	speed.y=775
 	var out: = linear_velocity
 	out.x = speed.x * direction.x 
 	out.y += gravity * get_physics_process_delta_time()
