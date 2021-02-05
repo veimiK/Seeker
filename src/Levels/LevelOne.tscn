@@ -81,38 +81,30 @@ speed = Vector2( 300, 775 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 504, 1084 )
-gravity = 3000.0
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1104, 696 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2368, 1120 )
-gravity = 3000.0
 
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2792, 1128 )
-gravity = 3000.0
 
 [node name="Enemy5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1600, 1136 )
-gravity = 3000.0
 
 [node name="Enemy6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2976, 688 )
-gravity = 3000.0
 
 [node name="Enemy7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2744, 680 )
-gravity = 3000.0
 
 [node name="Enemy8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2472, 584 )
-gravity = 3000.0
 
 [node name="Enemy9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1408, 384 )
-gravity = 3000.0
 
 [node name="PowerPoint" parent="." instance=ExtResource( 2 )]
 position = Vector2( 648, 848 )
