@@ -1,7 +1,7 @@
 extends "res://src/Actors/Actor.gd"
 
 export var score: = 1
-
+onready var current_anim: AnimationPlayer = get_node("AnimationPlayer")
 
 func _ready() -> void:
 	set_physics_process(false) #deactivate enemy at start
@@ -21,7 +21,17 @@ func _physics_process(delta: float) -> void:
 		_velocity.x = _velocity.x * -1 
 		
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y #makes the enemy turn around 
+	animate_movement(_velocity)
 
 func die() -> void:
 	queue_free() #killing
 	PlayerData.score += score 
+
+func animate_movement(
+		direction: Vector2) -> void:
+	if direction.x > 0:
+		current_anim.play("walking_right")
+	elif direction.x < 0:
+		current_anim.play("walking_left")
+	elif direction.x == 0:
+		current_anim.stop()

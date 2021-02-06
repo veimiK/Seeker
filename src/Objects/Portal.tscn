@@ -3,8 +3,6 @@
 [ext_resource path="res://assets/portal.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Portal.gd" type="Script" id=2]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 64 )
 
@@ -80,6 +78,7 @@ shape = SubResource( 1 )
 layer = 100
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -88,7 +87,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "start"
 anims/fade_in = SubResource( 2 )
 anims/start = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

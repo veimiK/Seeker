@@ -1,5 +1,7 @@
 extends Actor
 
+onready var current_anim: AnimationPlayer = get_node("AnimationPlayer")
+
 export var topkill_impulse: = 1000.0
 func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_topkill_velocity(_velocity, topkill_impulse)
@@ -16,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	var direction: = get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
-	
+	animate_movement(direction)
 	
 func get_direction() -> Vector2:
 	return Vector2(
@@ -52,6 +54,14 @@ func calculate_topkill_velocity(linear_velocity: Vector2, impulse: float) -> Vec
 func die() -> void:
 	PlayerData.deaths += 1
 	queue_free()
-	
+
+func animate_movement(
+		direction: Vector2) -> void:
+	if direction.x > 0:
+		current_anim.play("walking")
+	elif direction.x < 0:
+		current_anim.play("walking_left")
+	elif direction.x == 0:
+		current_anim.stop()
 
 

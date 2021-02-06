@@ -1,19 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
-[ext_resource path="res://src/UserInterface/ButtonPlay.gd" type="Script" id=2]
-[ext_resource path="res://src/UserInterface/ButtonExit.gd" type="Script" id=3]
+[ext_resource path="res://src/Screens/EndScreen.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/ButtonExit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/ButtonChangeScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ui_theme.tres" type="Theme" id=6]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=7]
 
-
-
 [node name="EndScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,27 +41,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonPlay" type="Button" parent="Menu" instance=ExtResource( 5 )]
+[node name="ButtonPlay" parent="Menu" instance=ExtResource( 5 )]
 margin_right = 175.0
-margin_bottom = 61.0
-size_flags_vertical = 3
 text = "Play again"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 next_scene_path = "res://src/Screens/MainMenu.tscn"
 
-[node name="ButtonExit" type="Button" parent="Menu" instance=ExtResource( 4 )]
+[node name="ButtonExit" parent="Menu" instance=ExtResource( 4 )]
 margin_top = 65.0
 margin_right = 175.0
 margin_bottom = 126.0
-size_flags_vertical = 3
-text = "Exit"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title" parent="." instance=ExtResource( 7 )]
 anchor_top = 0.5
@@ -72,7 +58,7 @@ margin_left = -344.0
 margin_top = -308.0
 margin_right = 344.0
 margin_bottom = -207.0
-text = "Congratulations, you've finished the game!"
+text = "Congratulations, you finished the game!"
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -87,5 +73,3 @@ text = "Your final score is: %s.
 You died %s times. "
 align = 1
 valign = 1
-[connection signal="button_up" from="Menu/ButtonPlay" to="Menu/ButtonPlay" method="_on_button_up"]
-[connection signal="button_up" from="Menu/ButtonExit" to="Menu/ButtonExit" method="_on_button_up"]
