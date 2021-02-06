@@ -5,7 +5,10 @@ func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_topkill_velocity(_velocity, topkill_impulse)
 
 func _on_EnemyDetector_body_entered(body: Node) -> void:
-	queue_free() #kill player 
+	die()
+	
+	#queue_free() #kill player 
+	PlayerData.deaths += 1 #add 1 to death score
 
 
 func _physics_process(delta: float) -> void:
@@ -46,5 +49,9 @@ func calculate_topkill_velocity(linear_velocity: Vector2, impulse: float) -> Vec
 	out.y = -impulse #jump off of head
 	return out
 
+func die() -> void:
+	PlayerData.deaths += 1
+	queue_free()
+	
 
 
